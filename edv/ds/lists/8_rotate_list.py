@@ -24,3 +24,5 @@ print(f"Input => {lst}")
 inst = ListRotator()
 print(f"Solution 1 => {inst.solution1(lst, 1)}")
 print(f"Solution 2 => {inst.solution1(lst, 1)}")
+
+assert sum([1, 2, 3, 4]) == 10, "Should be 10"
