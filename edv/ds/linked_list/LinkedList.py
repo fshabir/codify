@@ -11,6 +11,15 @@ class LinkedList(object):
     def get_head(self):
         return self.head
 
+    def insert(self, value):
+        if self.head is None:
+            self.head = Node(value)
+        else:
+            curr = self.head
+            while curr.next is not None:
+                curr = curr.next
+            curr.next = Node(value)
+
     def is_empty(self):
         return self.head is None
 
