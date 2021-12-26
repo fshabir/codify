@@ -25,9 +25,10 @@ class LinkedList(object):
 
     def print_list(self):
         curr = self.head
-        print("List", end=" => ")
+        print("List: ", end="")
         while curr is not None:
-            print(curr.data, end = ", ")
+            print(curr.data, end = " => ")
             curr = curr.next
+        print("None")
 
 
