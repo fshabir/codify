@@ -15,21 +15,17 @@ def reverse(lst: LinkedList) -> LinkedList:
     return new_list
 
 def reverse_in_place(lst: LinkedList) -> LinkedList:
-    p1, p2, p3 = (None, None, None)
-    p2 = lst.get_head()
-    if p2 is None: return None
-    p3 = p2.next
+    prev = None
+    curr = lst.get_head()
 
-    while p3:
-        p2.next = p1
-        p1 = p2
-        p2 = p3
-        p3 = p3.next
+    while curr:
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
 
-    p2.next = p1
-    lst.head = p2
+        lst.head = prev
     return lst
-
 
 lst = LinkedList()
 lst.insert(0)
