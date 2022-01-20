@@ -30,5 +30,22 @@ def next_greater_element_2(lst: List[int]) -> List[int]:
     return lst
 
 
+def next_greater_element_3(lst: List[int]) -> List[int]:
+    current = 0
+    while current < len(lst) - 1:
+        forward = current + 1
+        while forward < len(lst) - 1 and lst[forward] <= lst[current]:
+            forward += 1
+
+        if forward >= len(lst) - 1:
+            lst[current] = -1
+            current += 1
+        else:
+            while current < forward:
+                lst[current] = lst[forward]
+                current += 1
+    return lst
+
 print(f"next_greater_element([4, 6, 3, 2, 8, 1]) => {next_greater_element([4, 6, 3, 2, 8, 1])}")
 print(f"next_greater_element_2([4, 6, 3, 2, 8, 1]) => {next_greater_element_2([4, 6, 3, 2, 8, 1])}")
+print(f"next_greater_element_3([4, 6, 3, 2, 8, 1]) => {next_greater_element_3([4, 6, 3, 2, 8, 1])}")
